@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".Login"
     android:background="@color/white"
     android:paddingLeft="25dp"
     android:paddingRight="25dp">
@@ -48,7 +48,6 @@
         android:layout_gravity="center"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/stressfree"
         tools:ignore="MissingConstraints"/>
 
     <TextView
@@ -57,7 +56,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="169dp"
         android:layout_marginEnd="154dp"
-        android:fontFamily="@font/aclonica"
         android:text="@string/login"
         android:textColor="@color/black"
         android:textSize="44sp"

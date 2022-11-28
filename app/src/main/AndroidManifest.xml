@@ -16,6 +16,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitnessify"
         tools:targetApi="31">
+
+        <activity
+            android:name=".BMI"
+            android:exported="false" />
+        <activity
+            android:name=".BMIResult"
+            android:exported="false" />
+        <activity
+            android:name=".Exercise"
+            android:exported="false" />
+        <activity
+            android:name=".Google"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".Tips"
+            android:exported="false" />
+        <activity
+            android:name=".Health"
+            android:exported="false" />
+        <activity
+            android:name=".Diet"
+            android:exported="false"
+            android:label="@string/title_activity_diet"
+            android:theme="@style/Theme.Fitnessify.NoActionBar" />
         <activity
             android:name=".LogoSplash"
             android:exported="true">
@@ -27,8 +57,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

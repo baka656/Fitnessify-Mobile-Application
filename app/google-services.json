@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "233086578439",
+    "firebase_url": "https://fitnessify-3aedb-default-rtdb.firebaseio.com",
+    "project_id": "fitnessify-3aedb",
+    "storage_bucket": "fitnessify-3aedb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233086578439:android:972cfaed5a830e273c1fa2",
+        "android_client_info": {
+          "package_name": "edu.sjsu.android.fitnessify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233086578439-odgsb2l35drpk2qje894qq4okbevo1uj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuYjmRIxWuQb07dMuDsuHaxvNMVwkrR7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233086578439-odgsb2l35drpk2qje894qq4okbevo1uj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

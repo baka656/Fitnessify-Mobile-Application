@@ -23,7 +23,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="97dp"
             android:background="@color/black">
 
             <ImageView
@@ -66,11 +66,56 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fitness" />
 
+    <org.eazegraph.lib.charts.PieChart
+        android:id="@+id/graph"
+        app:egHighlightStrength="1"
+        app:egInnerPadding="75"
+        app:egLegendHeight="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+    </org.eazegraph.lib.charts.PieChart>
+
+    <TextView
+        android:id="@+id/stepsinpiechart"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/graph"
+        app:layout_constraintTop_toTopOf="@+id/graph"
+        app:layout_constraintVertical_bias="0.485"
+        tools:layout_editor_absoluteX="0dp">
+
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/unit"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="steps"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/graph"
+        app:layout_constraintTop_toTopOf="@+id/graph"
+        app:layout_constraintVertical_bias="0.779"
+        tools:layout_editor_absoluteX="0dp" />
+
     <TextView
         android:id="@+id/tvmarq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
@@ -78,8 +123,10 @@
         android:text="@string/tvmar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+        app:layout_constraintTop_toBottomOf="@+id/graph"
+        app:layout_constraintVertical_bias="0.385" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

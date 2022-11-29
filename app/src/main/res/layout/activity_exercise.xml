@@ -78,6 +78,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/pushup"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -133,6 +134,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/pullup"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -188,6 +190,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/squats"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -243,6 +246,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/plank2"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -298,6 +302,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/deadbug"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -353,6 +358,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/skipping"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -408,6 +414,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/weightsquat"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -463,6 +470,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/splitjumps"
                     tools:ignore="MissingConstraints" />
 
                 <TextView

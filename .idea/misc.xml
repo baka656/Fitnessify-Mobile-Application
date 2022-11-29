@@ -14,10 +14,12 @@
         <entry key="app/src/main/res/layout/activity_diet.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_exercise.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_health.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.34655354817708334" />
         <entry key="app/src/main/res/layout/activity_logo_splash.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_step_count.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_tips.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/content_diet.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.15520833333333334" />

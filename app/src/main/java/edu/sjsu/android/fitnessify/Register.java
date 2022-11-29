@@ -71,7 +71,7 @@ public class Register extends AppCompatActivity {
         }
         else if(password.isEmpty() || password.length()<6)
         {
-            inputPassword.setError("Enter Valid Password");
+            inputPassword.setError("Enter Valid 6 sized Password");
         }
         else
         {
@@ -92,7 +92,7 @@ public class Register extends AppCompatActivity {
                     else
                     {
                         progressDialog.dismiss();
-                        Toast.makeText(Register.this,""+task.getException(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Register.this,"Registration Failed due to "+task.getException(),Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -100,7 +100,7 @@ public class Register extends AppCompatActivity {
     }
 
     private void sendUserToNextActivity() {
-        Intent intent = new Intent(Register.this,MainActivity.class);
+        Intent intent = new Intent(Register.this,Login.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

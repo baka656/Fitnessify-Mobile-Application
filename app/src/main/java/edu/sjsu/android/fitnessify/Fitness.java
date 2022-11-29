@@ -17,7 +17,6 @@ public class Fitness extends Fragment {
     ImageView img;
     ImageView img2;
     ImageView img3;
-    ImageView img4;
     ImageView img5;
 
     private static final String ARG_PARAM1 = "param1";
@@ -55,7 +54,6 @@ public class Fitness extends Fragment {
         img = view.findViewById(R.id.bmibtn1);
         img2 = view.findViewById(R.id.dietbtn1);
         img3 = view.findViewById(R.id.musicbtn1);
-        img4 = view.findViewById(R.id.wellbtn1);
         img5 = view.findViewById(R.id.tipsbtn1);
 
         img.setOnClickListener(new View.OnClickListener() {
@@ -82,13 +80,7 @@ public class Fitness extends Fragment {
             }
         });
 
-        img4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),Health.class);
-                startActivity(intent);
-            }
-        });
+
 
         img5.setOnClickListener(new View.OnClickListener() {
             @Override

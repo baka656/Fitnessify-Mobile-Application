@@ -32,8 +32,7 @@ public class BMIResult extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi_result);
-
-
+        getSupportActionBar().hide();
         intent=getIntent();
         mbmidisplay=findViewById(R.id.bmidisplay);
         mbmicategory = findViewById(R.id.bmicategorydispaly);

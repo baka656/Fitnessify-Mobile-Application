@@ -1,10 +1,12 @@
 package edu.sjsu.android.fitnessify;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,10 +16,22 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Register extends AppCompatActivity {
 
@@ -29,12 +43,14 @@ public class Register extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+    FirebaseFirestore firestore;
+    FirebaseAuth fAuth;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         inputEmail = findViewById(R.id.inputEmail);
         inputPassword = findViewById(R.id.inputPassword);
@@ -86,6 +102,22 @@ public class Register extends AppCompatActivity {
                     if(task.isSuccessful())
                     {
                         progressDialog.dismiss();
+                        firestore = FirebaseFirestore.getInstance();
+                        fAuth = FirebaseAuth.getInstance();
+                        userID = fAuth.getCurrentUser().getUid();
+                        DocumentReference documentReference = firestore.collection("user").document(userID);
+                        Map<String,Object> user = new HashMap<>();
+                        user.put("name",email);
+                        user.put("email",email);
+                        user.put("contact","1234567890");
+                        user.put("weight","-");
+                        user.put("height","-");
+                        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Log.d(TAG,"Success"+userID);
+                            }
+                        });
                         sendUserToNextActivity();
                         Toast.makeText(Register.this,"Registration Successful",Toast.LENGTH_SHORT).show();
                     }

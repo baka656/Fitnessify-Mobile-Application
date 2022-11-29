@@ -191,18 +191,27 @@
 
         </LinearLayout>
 
+
         <Button
             android:id="@+id/signinbtn"
-            android:layout_width="wrap_content"
+            android:layout_width="117dp"
             android:layout_height="wrap_content"
             android:text="SignIn"
             android:layout_gravity="center"
             tools:ignore="MissingConstraints" />
 
         <Button
+            android:id="@+id/signoutbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="SignOut"
+            android:layout_gravity="center"
+            tools:ignore="MissingConstraints" />
+
+        <Button
             android:id="@+id/updatebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="UPDATE" />
 

@@ -1,10 +1,14 @@
 package edu.sjsu.android.fitnessify;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,7 +33,7 @@ public class Profile extends Fragment {
 
     public static final String TAG = "TAG";
     ImageView img;
-    Button btn,updatebtn;
+    Button btn,updatebtn, btn1;
     EditText kg,cm;
     TextInputLayout name,email,contact;
     FirebaseFirestore firestore;
@@ -69,6 +73,7 @@ public class Profile extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         btn = view.findViewById(R.id.signinbtn);
+        btn1 = view.findViewById(R.id.signoutbtn);
         kg = view.findViewById(R.id.weight_label);
         cm = view.findViewById(R.id.height_label);
         name = view.findViewById(R.id.full_name_profile);
@@ -80,11 +85,34 @@ public class Profile extends Fragment {
         firestore = FirebaseFirestore.getInstance();
         fAuth = FirebaseAuth.getInstance();
 
+        SharedPreferences sh = getActivity().getSharedPreferences("baka", MODE_PRIVATE);
+        String s1 = sh.getString("email", "");
+        if(s1.equals("")){
+            btn.setVisibility(View.VISIBLE);
+            btn1.setVisibility(View.GONE);
+        }
+        else{
+            btn1.setVisibility(View.VISIBLE);
+            btn.setVisibility(View.GONE);
+            setdata();
+        }
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(),Login.class);
                 startActivity(intent);
+            }
+        });
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("baka", MODE_PRIVATE);
+                SharedPreferences.Editor myEdit = sharedPreferences.edit();
+                myEdit.putString("email", "");
+                myEdit.apply();
+                Intent i = new Intent(getActivity(),MainActivity.class);
+                startActivity(i);
             }
         });
         updatebtn.setOnClickListener(new View.OnClickListener() {
@@ -113,26 +141,41 @@ public class Profile extends Fragment {
             }
         });
 
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                userID = fAuth.getCurrentUser().getUid();
-                DocumentReference documentReference = firestore.collection("user").document(userID);
-                documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                        kg.setText(value.getString("weight"));
-                        cm.setText(value.getString("height"));
-                        name.getEditText().setText(value.getString("name"));
-                        email.getEditText().setText(value.getString("email"));
-                        contact.getEditText().setText(value.getString("contact"));
-                    }
-                });
-            }
-        });
+//        img.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                userID = fAuth.getCurrentUser().getUid();
+//                DocumentReference documentReference = firestore.collection("user").document(userID);
+//                documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+//                    @Override
+//                    public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+//                        kg.setText(value.getString("weight"));
+//                        cm.setText(value.getString("height"));
+//                        name.getEditText().setText(value.getString("name"));
+//                        email.getEditText().setText(value.getString("email"));
+//                        contact.getEditText().setText(value.getString("contact"));
+//                    }
+//                });
+//            }
+//        });
 
 
 
         return view;
+    }
+    public void setdata()
+    {
+        userID = fAuth.getCurrentUser().getUid();
+        DocumentReference documentReference = firestore.collection("user").document(userID);
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                kg.setText(value.getString("weight"));
+                cm.setText(value.getString("height"));
+                name.getEditText().setText(value.getString("name"));
+                email.getEditText().setText(value.getString("email"));
+                contact.getEditText().setText(value.getString("contact"));
+            }
+        });
     }
 }

@@ -2,18 +2,17 @@ package edu.sjsu.android.fitnessify;
 
 public class User {
     private String name, mob, email;
-    private int weight, height, steps;
+    private int weight, height;
 
     public User() {
     }
 
-    public User(String email, String name, String mob, int weight, int height, int steps) {
+    public User(String email, String name, String mob, int weight, int height) {
         this.name = name;
         this.email = email;
         this.mob = mob;
         this.weight = weight;
         this.height = height;
-        this.steps = steps;
     }
     public String getName() {
         return name;
@@ -54,14 +53,6 @@ public class User {
 
     public void setHeight(int height) {
         this.height = height;
-    }
-
-    public int getSteps() {
-        return steps;
-    }
-
-    public void setSteps(int steps) {
-        this.steps = steps;
     }
 }
 

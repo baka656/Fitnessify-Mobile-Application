@@ -2,10 +2,9 @@ package edu.sjsu.android.fitnessify;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,8 +19,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity {
 
@@ -31,12 +28,8 @@ public class Login extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
 
-    ImageView btnGoogle;
-
     FirebaseAuth mAuth;
     FirebaseUser mUser;
-    FirebaseDatabase database;
-    DatabaseReference myRef;
 
 
 
@@ -44,12 +37,10 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         inputEmail = findViewById(R.id.inputEmail);
         inputPassword = findViewById(R.id.inputPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        btnGoogle = findViewById(R.id.btnGoogle);
         progressDialog = new ProgressDialog(this);
         mAuth=FirebaseAuth.getInstance();
         mUser=mAuth.getCurrentUser();
@@ -68,14 +59,6 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 performLogin();
-            }
-        });
-
-        btnGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login.this,Google.class);
-                startActivity(intent);
             }
         });
 
@@ -104,6 +87,10 @@ public class Login extends AppCompatActivity {
                     if(task.isSuccessful())
                     {
                         progressDialog.dismiss();
+                        SharedPreferences sharedPreferences = getSharedPreferences("baka", MODE_PRIVATE);
+                        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+                        myEdit.putString("email", email);
+                        myEdit.apply();
                         sendUserToNextActivity();
                         Toast.makeText(Login.this,"Login Successful",Toast.LENGTH_SHORT).show();
                     }else

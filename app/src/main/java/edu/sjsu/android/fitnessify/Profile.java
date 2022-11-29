@@ -90,6 +90,7 @@ public class Profile extends Fragment {
         if(s1.equals("")){
             btn.setVisibility(View.VISIBLE);
             btn1.setVisibility(View.GONE);
+            updatebtn.setVisibility(View.GONE);
         }
         else{
             btn1.setVisibility(View.VISIBLE);

@@ -12,14 +12,14 @@
         android:id="@+id/frame" />
 
     <me.ibrahimsn.lib.SmoothBottomBar
-        android:id="@+id/bottomBar"
+        android:id="@+id/navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         app:backgroundColor="@color/black"
         app:iconSize="24dp"
-        app:iconTint="@color/icontint"
+        app:iconTint="@color/tint_icon"
         app:iconTintActive="@color/white"
-        app:indicatorColor="@color/indicatorcolor"
+        app:indicatorColor="@color/color_indicator"
         app:indicatorRadius="10dp"
         app:itemPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

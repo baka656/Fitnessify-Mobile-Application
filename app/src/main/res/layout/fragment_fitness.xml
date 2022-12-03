@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/fitnessfrag"
+    android:id="@+id/fitness_fragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +9,6 @@
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- Image Slider !-->
     <ViewFlipper
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -46,12 +45,12 @@
 
 
     <TextView
-        android:id="@+id/tryouttextview"
+        android:id="@+id/try_out_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="260dp"
-        android:text="Try Out:-"
+        android:text="@string/try_out"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -59,31 +58,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/musicbtn1"
+        android:id="@+id/music_button"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/music_icon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/bmi_text"
+        android:contentDescription="@string/exercise" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tips_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="52dp"
-        android:text="TIPS"
+        android:text="@string/tips"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/tipsbtn1" />
+        app:layout_constraintStart_toEndOf="@+id/music_text"
+        app:layout_constraintTop_toBottomOf="@+id/tips_button" />
 
     <ImageView
-        android:id="@+id/dietbtn1"
+        android:id="@+id/diet_button"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="92dp"
@@ -91,65 +91,68 @@
         android:background="@drawable/diet_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toEndOf="@+id/bmibtn1"
-        app:layout_constraintTop_toTopOf="@+id/bmibtn1" />
+        app:layout_constraintStart_toEndOf="@+id/bmi_button"
+        app:layout_constraintTop_toTopOf="@+id/bmi_button"
+        android:contentDescription="@string/exercise" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/diet_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="DIET"
+        android:text="@string/diet"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.541"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/dietbtn1" />
+        app:layout_constraintStart_toEndOf="@+id/bmi_text"
+        app:layout_constraintTop_toBottomOf="@+id/diet_button" />
 
     <ImageView
-        android:id="@+id/bmibtn1"
+        android:id="@+id/bmi_button"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/bmi_icon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tryouttextview" />
+        app:layout_constraintTop_toBottomOf="@+id/try_out_text"
+        android:contentDescription="@string/exercise" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/music_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
         android:layout_marginTop="20dp"
-        android:text="MUSIC"
+        android:text="@string/music"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/musicbtn1" />
+        app:layout_constraintTop_toBottomOf="@+id/music_button" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/bmi_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
         android:layout_marginTop="24dp"
-        android:text="BMI"
+        android:text="@string/bmi"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bmibtn1" />
+        app:layout_constraintTop_toBottomOf="@+id/bmi_button" />
 
     <ImageView
-        android:id="@+id/tipsbtn1"
+        android:id="@+id/tips_button"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/tips_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.603"
-        app:layout_constraintStart_toEndOf="@+id/musicbtn1"
-        app:layout_constraintTop_toTopOf="@+id/musicbtn1" />
+        app:layout_constraintStart_toEndOf="@+id/music_button"
+        app:layout_constraintTop_toTopOf="@+id/music_button"
+        android:contentDescription="@string/exercise" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

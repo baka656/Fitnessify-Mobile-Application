@@ -3,87 +3,61 @@ package edu.sjsu.android.fitnessify;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.method.BaseMovementMethod;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 public class BMI extends AppCompatActivity {
 
-    TextView mcurrentheight;
-    TextView mcurrentweight,mcurrentage;
-    ImageView mincrementage,mdecrementage,mincrementweight,mdecrementweight;
-    SeekBar mseekbarforheight;
-    Button mcalculatebmi;
-    RelativeLayout mmale,mfemale;
-
-    int intweight=55;
-    int intage=22;
-    int currentprogress;
-    String mintprogress="170";
-    String typerofuser="0";
-    String weight2="55";
-    String age2="22";
-    private static final int TIME_INTERVAL = 2000;
-    private long backPressed;
+    int int_weight = 55, int_age = 22, current_progress;
+    String sample_weight ="55", sample_age ="22", user_type ="0", int_progress ="170";
+    TextView current_height, current_weight, current_age;
+    RelativeLayout male, female;
+    SeekBar bar_height;
+    ImageView increment_age, decrement_age, increment_weight, decrement_weight;
+    Button calculate_bmi;
 
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
-        getSupportActionBar().hide();
-        mcurrentage=findViewById(R.id.currentage);
-        mcurrentweight=findViewById(R.id.currentweight);
-        mcurrentheight=findViewById(R.id.currentheight);
-        mincrementage=findViewById(R.id.incrementage);
-        mdecrementage=findViewById(R.id.decrementage);
-        mincrementweight=findViewById(R.id.incremetweight);
-        mdecrementweight=findViewById(R.id.decrementweight);
-        mcalculatebmi=findViewById(R.id.calculatebmi);
-        mseekbarforheight=findViewById(R.id.seekbarforheight);
-        mmale=findViewById(R.id.male);
-        mfemale=findViewById(R.id.female);
+        increment_weight =findViewById(R.id.increase_weight);
+        current_weight =findViewById(R.id.weight_current);
+        current_height =findViewById(R.id.current_height);
+        increment_age =findViewById(R.id.increase_age);
+        decrement_age =findViewById(R.id.decrease_age);
+        male =findViewById(R.id.male);
+        female =findViewById(R.id.female);
+        bar_height =findViewById(R.id.height_seek_bar);
+        decrement_weight =findViewById(R.id.decrease_weight);
+        calculate_bmi =findViewById(R.id.bmi_calculate);
+        current_age =findViewById(R.id.current_age);
 
-
-
-        mmale.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mmale.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalefocus));
-                mfemale.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalenotfocus));
-                typerofuser="Male";
-
-            }
+        female.setOnClickListener(res -> {
+            male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalenotfocus));
+            user_type ="Female";
+            female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalefocus));
         });
 
-
-        mfemale.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mfemale.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalefocus));
-                mmale.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalenotfocus));
-                typerofuser="Female";
-            }
+        male.setOnClickListener(res -> {
+            user_type ="Male";
+            female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalenotfocus));
+            male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalefocus));
         });
-
-        mseekbarforheight.setMax(300);
-        mseekbarforheight.setProgress(170);
-        mseekbarforheight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        bar_height.setMax(300);
+        bar_height.setProgress(170);
+        bar_height.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-                currentprogress=progress;
-                mintprogress=String.valueOf(currentprogress);
-                mcurrentheight.setText(mintprogress);
-
+            public void onProgressChanged(SeekBar seek_bar, int sample_progress, boolean may_be_from_user) {
+                current_progress =sample_progress;
+                int_progress =String.valueOf(current_progress);
+                current_height.setText(int_progress);
             }
 
             @Override
@@ -98,83 +72,51 @@ public class BMI extends AppCompatActivity {
         });
 
 
-        mincrementweight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intweight=intweight+1;
-                weight2=String.valueOf(intweight);
-                mcurrentweight.setText(weight2);
+        decrement_age.setOnClickListener(res -> {
+            int_age = int_age -1;
+            sample_age =String.valueOf(int_age);
+            current_age.setText(sample_age);
+        });
+
+        increment_age.setOnClickListener(res -> {
+            int_age = int_age +1;
+            sample_age =String.valueOf(int_age);
+            current_age.setText(sample_age);
+        });
+
+        increment_weight.setOnClickListener(res -> {
+            int_weight = int_weight +1;
+            sample_weight =String.valueOf(int_weight);
+            current_weight.setText(sample_weight);
+        });
+
+        calculate_bmi.setOnClickListener(res -> {
+            if(user_type.equals("0"))
+                Toast.makeText(getApplicationContext(),R.string.gender_select,Toast.LENGTH_SHORT).show();
+            else if(int_progress.equals("0"))
+                Toast.makeText(getApplicationContext(),R.string.height_select,Toast.LENGTH_SHORT).show();
+            else if(int_age ==0 || int_age <0)
+                Toast.makeText(getApplicationContext(),R.string.incorrect_age,Toast.LENGTH_SHORT).show();
+            else if(int_weight ==0|| int_weight <0)
+                Toast.makeText(getApplicationContext(),R.string.incorrect_weight,Toast.LENGTH_SHORT).show();
+            else {
+                Intent extra = new Intent(BMI.this, BMIResult.class);
+                extra.putExtra("gender", user_type);
+                extra.putExtra("height", int_progress);
+                extra.putExtra("weight", sample_weight);
+                extra.putExtra("age", sample_age);
+                startActivity(extra);
             }
         });
 
-        mincrementage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intage=intage+1;
-                age2=String.valueOf(intage);
-                mcurrentage.setText(age2);
-            }
-        });
-
-
-        mdecrementage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intage=intage-1;
-                age2=String.valueOf(intage);
-                mcurrentage.setText(age2);
-            }
-        });
-
-
-        mdecrementweight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                intweight=intweight-1;
-                weight2=String.valueOf(intweight);
-                mcurrentweight.setText(weight2);
-            }
-        });
-
-
-
-        mcalculatebmi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(typerofuser.equals("0"))
-                {
-                    Toast.makeText(getApplicationContext(),"Select Your Gender First",Toast.LENGTH_SHORT).show();
-                }
-                else if(mintprogress.equals("0"))
-                {
-                    Toast.makeText(getApplicationContext(),"Select Your Height First",Toast.LENGTH_SHORT).show();
-                }
-                else if(intage==0 || intage<0)
-                {
-                    Toast.makeText(getApplicationContext(),"Age is Incorrect",Toast.LENGTH_SHORT).show();
-                }
-
-                else if(intweight==0|| intweight<0)
-                {
-                    Toast.makeText(getApplicationContext(),"Weight Is Incorrect",Toast.LENGTH_SHORT).show();
-                }
-                else {
-
-                    Intent intent = new Intent(BMI.this, BMIResult.class);
-                    intent.putExtra("gender", typerofuser);
-                    intent.putExtra("height", mintprogress);
-                    intent.putExtra("weight", weight2);
-                    intent.putExtra("age", age2);
-                    startActivity(intent);
-                }
-            }
+        decrement_weight.setOnClickListener(res -> {
+            int_weight = int_weight -1;
+            sample_weight =String.valueOf(int_weight);
+            current_weight.setText(sample_weight);
         });
     }
     @Override
     public void onBackPressed(){
-        Intent intent = new Intent(BMI.this,MainActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(BMI.this,MainActivity.class));
     }
 }

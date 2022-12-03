@@ -6,12 +6,12 @@
     android:layout_gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homebg"
+    android:background="@drawable/back_ground_home"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/gym_workout"
         android:layout_width="350dp"
         android:layout_height="100dp"
         android:layout_marginTop="300dp"
@@ -27,7 +27,7 @@
             android:background="@color/black">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/gym_workout_image"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="252dp"
@@ -35,19 +35,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/weightlifter_icon" />
+                app:srcCompat="@drawable/weight_icon_lifter"
+                android:contentDescription="@string/exercise" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/gym_workout_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="GYM WORKOUT"
+                android:text="@string/gym_workout"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintEnd_toStartOf="@+id/gym_workout_image"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -57,40 +58,41 @@
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/fitness_logo"
         android:layout_width="344dp"
         android:layout_height="196dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fitness" />
+        app:srcCompat="@drawable/logo_fit"
+        android:contentDescription="@string/exercise" />
 
     <org.eazegraph.lib.charts.PieChart
-        android:id="@+id/graph"
+        android:id="@+id/step_count_graph"
         app:egHighlightStrength="1"
         app:egInnerPadding="75"
         app:egLegendHeight="0dp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="28dp"
-        app:layout_constraintStart_toStartOf="@+id/cardView2"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+        app:layout_constraintStart_toStartOf="@+id/gym_workout"
+        app:layout_constraintTop_toBottomOf="@+id/gym_workout">
 
     </org.eazegraph.lib.charts.PieChart>
 
     <TextView
-        android:id="@+id/stepsinpiechart"
+        android:id="@+id/steps_chart_count"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
-        android:text="0"
+        android:text="@string/_0"
         android:textColor="#000"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/graph"
-        app:layout_constraintTop_toTopOf="@+id/graph"
+        app:layout_constraintBottom_toBottomOf="@+id/step_count_graph"
+        app:layout_constraintTop_toTopOf="@+id/step_count_graph"
         app:layout_constraintVertical_bias="0.485"
         tools:layout_editor_absoluteX="0dp">
 
@@ -98,34 +100,34 @@
 
 
     <TextView
-        android:id="@+id/unit"
+        android:id="@+id/steps_unit"
         android:layout_width="match_parent"
         android:layout_height="37dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
-        android:text="steps"
+        android:text="@string/steps"
         android:textColor="#000"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/graph"
-        app:layout_constraintTop_toTopOf="@+id/graph"
+        app:layout_constraintBottom_toBottomOf="@+id/step_count_graph"
+        app:layout_constraintTop_toTopOf="@+id/step_count_graph"
         app:layout_constraintVertical_bias="0.779"
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/tvmarq"
+        android:id="@+id/sliding_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
         android:singleLine="true"
-        android:text="@string/tvmar"
+        android:text="@string/sliding_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/graph"
+        app:layout_constraintTop_toBottomOf="@+id/step_count_graph"
         app:layout_constraintVertical_bias="0.385" />
 
 

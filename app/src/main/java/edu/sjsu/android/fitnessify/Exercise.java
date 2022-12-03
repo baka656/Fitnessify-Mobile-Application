@@ -3,102 +3,69 @@ package edu.sjsu.android.fitnessify;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class Exercise extends AppCompatActivity {
-
     CardView cd1,cd2,cd3,cd4,cd5,cd6,cd7,cd8;
+
+    private void navigate_to_uri(String s) {
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
-        cd1 = findViewById(R.id.pushcard);
-        cd2 = findViewById(R.id.pullcard);
-        cd3 = findViewById(R.id.squartcard);
-        cd4 = findViewById(R.id.tplankcard);
-        cd5 = findViewById(R.id.deadbugcard);
-        cd6 = findViewById(R.id.skippingcard);
-        cd7 = findViewById(R.id.heavysqcard);
-        cd8 = findViewById(R.id.splitjumpcard);
+        cd1 = findViewById(R.id.push_ups_card);
+        cd2 = findViewById(R.id.pull_ups_card);
+        cd3 = findViewById(R.id.squats_card);
+        cd4 = findViewById(R.id.t_plank_card);
+        cd5 = findViewById(R.id.dead_bug_card);
+        cd6 = findViewById(R.id.skipping_card);
+        cd7 = findViewById(R.id.heavy_squat);
+        cd8 = findViewById(R.id.split_jump_card);
 
-        cd1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Exercise.this, "Opening Youtube!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://www.youtube.com/watch?v=IODxDxX7oi4");
-            }
+        cd1.setOnClickListener(res -> {
+            Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
+            navigate_to_uri("https://www.youtube.com/watch?v=IODxDxX7oi4");
         });
 
-        cd2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Exercise.this, "Opening Youtube!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://www.youtube.com/watch?v=eGo4IYlbE5g");
-            }
+        cd2.setOnClickListener(res -> {
+            Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
+            navigate_to_uri("https://www.youtube.com/watch?v=eGo4IYlbE5g");
         });
 
-        cd3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Exercise.this, "Opening Youtube!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://www.youtube.com/watch?v=YaXPRqUwItQ");
-            }
+        cd3.setOnClickListener(res -> {
+            Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
+            navigate_to_uri("https://www.youtube.com/watch?v=YaXPRqUwItQ");
         });
 
-        cd4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Exercise.this, "Opening Youtube!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://www.youtube.com/watch?v=rTY5mqJ1HNo");
-            }
+        cd4.setOnClickListener(res -> {
+            Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
+            navigate_to_uri("https://www.youtube.com/watch?v=rTY5mqJ1HNo");
         });
 
-        cd5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Exercise.this, "Opening Youtube!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://www.youtube.com/watch?v=4XLEnwUr1d8");
-            }
+        cd5.setOnClickListener(res -> {
+            Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
+            navigate_to_uri("https://www.youtube.com/watch?v=4XLEnwUr1d8");
         });
 
-        cd6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Exercise.this, "Opening Youtube!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://www.youtube.com/watch?v=u3zgHI8QnqE");
-            }
+        cd6.setOnClickListener(res -> {
+            Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
+            navigate_to_uri("https://www.youtube.com/watch?v=u3zgHI8QnqE");
         });
 
-        cd7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Exercise.this, "Opening Youtube!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://www.youtube.com/watch?v=Uv_DKDl7EjA");
-            }
+        cd7.setOnClickListener(res -> {
+            Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
+            navigate_to_uri("https://www.youtube.com/watch?v=Uv_DKDl7EjA");
         });
 
-        cd8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Exercise.this, "Opening Youtube!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://www.youtube.com/watch?v=qsF1gYTWTrQ");
-            }
+        cd8.setOnClickListener(res -> {
+            Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
+            navigate_to_uri("https://www.youtube.com/watch?v=qsF1gYTWTrQ");
         });
-
-
-
-
-    }
-    private void gotoUri(String s) {
-        Uri uri = Uri.parse(s);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
 }

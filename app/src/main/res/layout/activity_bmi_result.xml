@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,30 +12,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:id="@+id/imageview"
-        android:layout_above="@id/contentlayout"
+        android:id="@+id/right_check"
+        android:layout_above="@id/bmi_result_card"
         android:layout_marginBottom="30dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/ok">
+        android:src="@drawable/right_check"
+        android:contentDescription="@string/correct_tick">
 
     </ImageView>
 
 
     <RelativeLayout
-        android:id="@+id/contentlayout"
+        android:id="@+id/bmi_result_card"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:background="@drawable/cardbackgroung"
+        android:background="@drawable/black_card_back_ground"
         android:padding="20dp">
 
         <TextView
-            android:id="@+id/bmidisplay"
+            android:id="@+id/bmi_display_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:background="@color/trans"
-            android:text="22"
+            android:text="@string/_22"
             android:textColor="@color/white"
             android:textSize="50sp"
             android:textStyle="bold">
@@ -44,25 +44,25 @@
         </TextView>
 
         <TextView
-            android:id="@+id/genderdisplay"
+            android:id="@+id/gender_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/bmidisplay"
+            android:layout_below="@id/bmi_display_text"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:text="Gender"
+            android:text="@string/gender"
             android:textColor="@color/white"
             android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/bmicategorydispaly"
+            android:id="@+id/bmi_category_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/genderdisplay"
+            android:layout_below="@id/gender_text"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:text="Your BMI Category Is"
+            android:text="@string/your_bmi_category_is"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:textStyle="bold">
@@ -71,17 +71,14 @@
 
 
     </RelativeLayout>
-
-
-
     <android.widget.Button
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:id="@+id/gotomain"
-        android:layout_below="@id/contentlayout"
+        android:id="@+id/navigate_bmi"
+        android:layout_below="@id/bmi_result_card"
         android:layout_marginTop="50dp"
-        android:background="@drawable/buttonbackground"
-        android:text="RECALCULATE YOUR BMI"
+        android:background="@drawable/button_back_ground"
+        android:text="@string/recalculate_your_bmi"
         android:textSize="15sp"
         android:textColor="@color/white"
         android:textStyle="bold"

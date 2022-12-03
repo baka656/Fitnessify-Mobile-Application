@@ -1,14 +1,8 @@
 package edu.sjsu.android.fitnessify;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-import android.view.WindowManager;
 import android.webkit.WebView;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class Diet extends AppCompatActivity {
@@ -19,9 +13,7 @@ public class Diet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diet);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        webView = findViewById(R.id.webview1);
+        webView = findViewById(R.id.diet_web_view);
         webView.loadUrl("https://www.muscleandstrength.com/recipes");
-
     }
 }

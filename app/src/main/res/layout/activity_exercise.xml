@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp"
         android:background="#fff">
@@ -21,9 +21,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="WorkOuts"
+            android:text="@string/workouts"
             android:textStyle="bold"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textColor="@color/black"
             android:layout_gravity="center"/>
 
@@ -43,7 +43,7 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/pushcard"
+            android:id="@+id/push_ups_card"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardCornerRadius="15dp"
@@ -56,11 +56,11 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/push_ups_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="PUSHUPS"
+                    android:text="@string/push_ups"
                     android:textColor="#000"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -78,7 +78,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/pushup"
+                    app:lottie_rawRes="@raw/push_ups"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -86,12 +86,12 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
-                    android:text="@string/pushup"
+                    android:text="@string/push_up"
                     android:textSize="13sp"
                     android:textStyle="bold"
                     android:textColor="#000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                    app:layout_constraintTop_toBottomOf="@+id/push_ups_text" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -99,7 +99,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/pullcard"
+            android:id="@+id/pull_ups_card"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardCornerRadius="15dp"
@@ -112,11 +112,11 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/t2"
+                    android:id="@+id/pull_ups_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="PULLUPS"
+                    android:text="@string/pull_ups"
                     android:textColor="#000"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -134,7 +134,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/pullup"
+                    app:lottie_rawRes="@raw/pull_ups"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -142,12 +142,12 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
-                    android:text="@string/pullup"
+                    android:text="@string/pull_up"
                     android:textSize="13sp"
                     android:textStyle="bold"
                     android:textColor="#000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/t2" />
+                    app:layout_constraintTop_toBottomOf="@+id/pull_ups_text" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -155,7 +155,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/squartcard"
+            android:id="@+id/squats_card"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardCornerRadius="15dp"
@@ -168,11 +168,11 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/t3"
+                    android:id="@+id/squats_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="SQUATS"
+                    android:text="@string/squats__"
                     android:textColor="#000"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -203,7 +203,7 @@
                     android:textStyle="bold"
                     android:textColor="#000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/t3" />
+                    app:layout_constraintTop_toBottomOf="@+id/squats_text" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -211,7 +211,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/tplankcard"
+            android:id="@+id/t_plank_card"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardCornerRadius="15dp"
@@ -224,11 +224,11 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/t5"
+                    android:id="@+id/t_plank_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="T PLANK HOLD"
+                    android:text="@string/t_plank_hold"
                     android:textColor="#000"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -246,7 +246,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/plank2"
+                    app:lottie_rawRes="@raw/t_plank"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -254,12 +254,12 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
-                    android:text="@string/tplank"
+                    android:text="@string/t_plank"
                     android:textSize="13sp"
                     android:textStyle="bold"
                     android:textColor="#000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/t5" />
+                    app:layout_constraintTop_toBottomOf="@+id/t_plank_text" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -267,7 +267,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/deadbugcard"
+            android:id="@+id/dead_bug_card"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardCornerRadius="15dp"
@@ -280,11 +280,11 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/t6"
+                    android:id="@+id/dead_bug_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="DEADBUG"
+                    android:text="@string/dead_bug"
                     android:textColor="#000"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -302,7 +302,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/deadbug"
+                    app:lottie_rawRes="@raw/dead_bug"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -310,12 +310,12 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
-                    android:text="@string/deadbug"
+                    android:text="@string/dead_bug_"
                     android:textSize="13sp"
                     android:textStyle="bold"
                     android:textColor="#000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/t6" />
+                    app:layout_constraintTop_toBottomOf="@+id/dead_bug_text" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -323,7 +323,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/skippingcard"
+            android:id="@+id/skipping_card"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardCornerRadius="15dp"
@@ -336,11 +336,11 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/t7"
+                    android:id="@+id/skipping_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="SKIPPING"
+                    android:text="@string/skipping__"
                     android:textColor="#000"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -371,7 +371,7 @@
                     android:textStyle="bold"
                     android:textColor="#000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/t7" />
+                    app:layout_constraintTop_toBottomOf="@+id/skipping_text" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -379,7 +379,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/heavysqcard"
+            android:id="@+id/heavy_squat"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardCornerRadius="15dp"
@@ -392,11 +392,11 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/t4"
+                    android:id="@+id/heavy_squat_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="HEAVY SQUATS"
+                    android:text="@string/heavy_squats"
                     android:textColor="#000"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -414,7 +414,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/weightsquat"
+                    app:lottie_rawRes="@raw/weight_squat"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -422,12 +422,12 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
-                    android:text="@string/heavysquats"
+                    android:text="@string/heavy_squat"
                     android:textSize="13sp"
                     android:textStyle="bold"
                     android:textColor="#000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/t4" />
+                    app:layout_constraintTop_toBottomOf="@+id/heavy_squat_text" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -435,7 +435,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/splitjumpcard"
+            android:id="@+id/split_jump_card"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardCornerRadius="15dp"
@@ -448,11 +448,11 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/t8"
+                    android:id="@+id/split_jump_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="SPLITJUMP"
+                    android:text="@string/split_jump_"
                     android:textColor="#000"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -470,7 +470,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/splitjumps"
+                    app:lottie_rawRes="@raw/split_jumps"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -478,12 +478,12 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
-                    android:text="@string/splitjump"
+                    android:text="@string/split_jump"
                     android:textSize="13sp"
                     android:textStyle="bold"
                     android:textColor="#000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/t8" />
+                    app:layout_constraintTop_toBottomOf="@+id/split_jump_text" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

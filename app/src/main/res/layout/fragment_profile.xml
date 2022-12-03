@@ -22,8 +22,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/profile_image"
-                android:contentDescription="@string/profile_picture" />
+                android:contentDescription="@string/profile_picture"
+                android:src="@drawable/profile_image" />
 
             <TextView
                 android:id="@+id/field_name"
@@ -198,23 +198,32 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
-
-
-        <Button
-            android:id="@+id/update_button"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/update" />
+            android:padding="20dp">
 
-        <Button
-            android:id="@+id/sign_out_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/sign_out"
-            tools:ignore="MissingConstraints" />
+            <Button
+                android:id="@+id/update_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="149dp"
+                android:layout_toStartOf="@+id/sign_out_button"
+                android:text="@string/update" />
+
+            <Button
+                android:id="@+id/sign_out_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:layout_marginEnd="18dp"
+                android:text="@string/sign_out"
+                tools:ignore="MissingConstraints" />
+        </RelativeLayout>
 
     </LinearLayout>
+
 
 </ScrollView>

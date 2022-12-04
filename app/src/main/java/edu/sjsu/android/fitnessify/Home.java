@@ -48,6 +48,7 @@ public class Home extends Fragment implements SensorEventListener {
         super.onResume ();
         isRunning = true;
         Sensor count = sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+        // warning if sensor not found
         if(count== null)
             Toast.makeText ( getActivity(),R.string.no_sensor,Toast.LENGTH_SHORT ).show();
         else

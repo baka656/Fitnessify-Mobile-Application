@@ -14,6 +14,6 @@ public class Diet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diet);
         webView = findViewById(R.id.diet_web_view);
-        webView.loadUrl("https://www.muscleandstrength.com/recipes");
+        webView.loadUrl(getString(R.string.diet_page));
     }
 }

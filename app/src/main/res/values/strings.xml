@@ -94,6 +94,44 @@
     <string name="height_select">Select Your Height First</string>
     <string name="incorrect_age">Age is Incorrect</string>
     <string name="incorrect_weight">Weight Is Incorrect</string>
+    <string name="severely_thin">Severe Thinness</string>
+    <string name="moderately_thin">Moderate Thinness</string>
+    <string name="mildly_thin">Mild Thinness</string>
+    <string name="normal">Normal</string>
+    <string name="overweight">Overweight</string>
+    <string name="obeseC1">Obese Class I</string>
+    <string name="obeseC2">Obese Class II</string>
+    <string name="gender_categ">gender</string>
+    <string name="wt">weight</string>
+    <string name="ht">height</string>
+    <string name="diet_page">https://www.muscleandstrength.com/recipes</string>
+    <string name="pushup_url">https://www.youtube.com/watch?v=IODxDxX7oi4</string>
+    <string name="pullups_url">https://www.youtube.com/watch?v=eGo4IYlbE5g</string>
+    <string name="squats_url">https://www.youtube.com/watch?v=YaXPRqUwItQ</string>
+    <string name="t_plank_url">https://www.youtube.com/watch?v=rTY5mqJ1HNo</string>
+    <string name="dead_bug_url">https://www.youtube.com/watch?v=4XLEnwUr1d8</string>
+    <string name="skipping_url">https://www.youtube.com/watch?v=u3zgHI8QnqE</string>
+    <string name="heavysquat_url">https://www.youtube.com/watch?v=Uv_DKDl7EjA</string>
+    <string name="split_jump_url">https://www.youtube.com/watch?v=qsF1gYTWTrQ</string>
+    <string name="spotify_url">https://open.spotify.com/playlist/4d9FIRJKV1nJDUu6ee4dC6</string>
+    <string name="enter_valid_email">Enter Valid Email</string>
+    <string name="enter_valid_pwd">Enter Valid Password</string>
+    <string name="wait_till_login">Please wait till Login...</string>
+    <string name="logged_in_success">Logged In</string>
+    <string name="consumer">consumer</string>
+    <string name="email_id">email</string>
+    <string name="enter_vemail">Enter Valid Email</string>
+    <string name="enter_6_pwd">Enter Valid 6 sized Password</string>
+    <string name="name_not_empty">Name should not be empty</string>
+    <string name="valid_mob_num">Enter valid mobile number</string>
+    <string name="wait_till_reg">Please wait till Registration...</string>
+    <string name="your_name">name</string>
+    <string name="l_contact">contact</string>
+    <string name="tips_url">https://www.nytimes.com/guides/well/strength-training-plyometrics</string>
+    <string name="l_gender">gender</string>
+    <string name="l_height">height</string>
+    <string name="l_weight">weight</string>
+    <string name="l_age">age</string>
 
 
 </resources>

@@ -20,7 +20,7 @@ public class Register extends AppCompatActivity {
 
     String pattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     TextView tv;
-    EditText email, pass, name, mobile;
+    EditText email, pwd, name, mobile;
     Button reg;
     FirebaseFirestore fire_store;
     FirebaseAuth firebase_auth, mAuth;
@@ -38,7 +38,7 @@ public class Register extends AppCompatActivity {
         mobile = findViewById(R.id.field_mobile);
         reg = findViewById(R.id.register_button);
         email = findViewById(R.id.field_email);
-        pass = findViewById(R.id.field_password);
+        pwd = findViewById(R.id.field_password);
         dialog = new ProgressDialog(this);
         tv = findViewById(R.id.existing_user);
         reg.setOnClickListener(res -> ValidateAuth());
@@ -53,20 +53,20 @@ public class Register extends AppCompatActivity {
 
     private void ValidateAuth() {
         String email = this.email.getText().toString();
-        String password = pass.getText().toString();
+        String password = pwd.getText().toString();
         String mob = mobile.getText().toString();
         String name = this.name.getText().toString();
         if(!email.matches(pattern))
-            this.email.setError("Enter Valid Email");
+            this.email.setError(getString(R.string.enter_vemail));
         else if(password.isEmpty() || password.length()<6)
-            pass.setError("Enter Valid 6 sized Password");
+            pwd.setError(getString(R.string.enter_6_pwd));
         else if(name.matches(""))
-            this.name.setError("Name should not be empty");
+            this.name.setError(getString(R.string.name_not_empty));
         else if(mob.length()!=10)
-            mobile.setError("Enter valid mobile number");
+            mobile.setError(getString(R.string.valid_mob_num));
         else
         {
-            dialog.setMessage("Please wait till Registration...");
+            dialog.setMessage(getString(R.string.wait_till_reg));
             dialog.setTitle(R.string.registration);
             dialog.setCanceledOnTouchOutside(false);
             dialog.show();
@@ -80,11 +80,11 @@ public class Register extends AppCompatActivity {
                     consumer_id = Objects.requireNonNull(firebase_auth.getCurrentUser()).getUid();
                     DocumentReference documentReference = fire_store.collection("user").document(consumer_id);
                     Map<String,Object> consumer = new HashMap<>();
-                    consumer.put("name",name);
-                    consumer.put("email",email);
-                    consumer.put("contact",mob);
-                    consumer.put("weight","-");
-                    consumer.put("height","-");
+                    consumer.put(getString(R.string.your_name),name);
+                    consumer.put(getString(R.string.email_id),email);
+                    consumer.put(getString(R.string.l_contact),mob);
+                    consumer.put(getString(R.string.weight),"-");
+                    consumer.put(getString(R.string.height),"-");
                     documentReference.set(consumer).addOnSuccessListener(task -> Toast.makeText(this, R.string.success, Toast.LENGTH_SHORT).show());
                     navigateToActivity();
                     Toast.makeText(Register.this,R.string.registrationSuccessful,Toast.LENGTH_SHORT).show();

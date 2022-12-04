@@ -17,9 +17,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginFragment extends Fragment {
-    TextView create_account;
-    EditText input_email, input_password;
-    Button login_button;
+    TextView create_acc;
+    EditText input_email, input_pwd;
+    Button login_bn;
     String email_pattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progress_dialog;
     FirebaseAuth mAuth;
@@ -34,47 +34,49 @@ public class LoginFragment extends Fragment {
 
     }
 
-    private void navigateToActivity() {
-        Intent task = new Intent(getActivity(),MainActivity.class);
-        task.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(task);
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View fragment_view = inflater.inflate(R.layout.fragment_login, container, false);
         input_email = fragment_view.findViewById(R.id.field_email);
-        input_password = fragment_view.findViewById(R.id.field_password);
-        login_button = fragment_view.findViewById(R.id.login_button);
+        input_pwd = fragment_view.findViewById(R.id.field_password);
+        login_bn = fragment_view.findViewById(R.id.login_button);
         progress_dialog = new ProgressDialog(getActivity());
         mAuth=FirebaseAuth.getInstance();
         mUser=mAuth.getCurrentUser();
-        create_account = fragment_view.findViewById(R.id.create_account);
-        create_account.setOnClickListener(res -> startActivity(new Intent(getActivity(),Register.class)));
-        login_button.setOnClickListener(res -> check_authentication());
+        create_acc = fragment_view.findViewById(R.id.create_account);
+        create_acc.setOnClickListener(res -> startActivity(new Intent(getActivity(),Register.class)));
+        login_bn.setOnClickListener(res -> check_authentication());
         return fragment_view;
+    }
+
+    private void navigateToActivity() {
+        Intent task = new Intent(getActivity(),MainActivity.class);
+        task.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(task);
     }
 
     private void check_authentication() {
         String email = input_email.getText().toString();
-        String password = input_password.getText().toString();
+        String password = input_pwd.getText().toString();
         if(!email.matches(email_pattern))
-            input_email.setError("Enter Valid Email");
+            input_email.setError(getString(R.string.enter_valid_email));
         else if(password.isEmpty() || password.length()<6)
-            input_password.setError("Enter Valid Password");
+            input_pwd.setError(getString(R.string.enter_valid_pwd));
         else {
-            progress_dialog.setMessage("Please wait till Login...");
-            progress_dialog.setTitle("LoggedIn");
+            progress_dialog.setMessage(getString(R.string.wait_till_login));
+            progress_dialog.setTitle(getString(R.string.logged_in_success));
             progress_dialog.setCanceledOnTouchOutside(false);
             progress_dialog.show();
             mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
                 if(task.isSuccessful())
                 {
                     progress_dialog.dismiss();
-                    SharedPreferences preferences_shared = requireActivity().getSharedPreferences("consumer", MODE_PRIVATE);
+                    SharedPreferences preferences_shared = requireActivity().getSharedPreferences(getString(R.string.consumer), MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences_shared.edit();
-                    editor.putString("email", email);
+                    editor.putString(getString(R.string.email_id), email);
                     editor.apply();
                     Toast.makeText(getActivity(),R.string.logged_in,Toast.LENGTH_SHORT).show();
                     navigateToActivity();

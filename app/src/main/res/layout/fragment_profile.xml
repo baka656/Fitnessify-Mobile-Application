@@ -198,29 +198,30 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp">
-
-            <Button
-                android:id="@+id/update_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="149dp"
-                android:layout_toStartOf="@+id/sign_out_button"
-                android:text="@string/update" />
+            android:padding="10dp"
+            android:layout_marginStart="20dp">
 
             <Button
                 android:id="@+id/sign_out_button"
-                android:layout_width="wrap_content"
+                android:layout_width="111dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="end"
-                android:layout_marginEnd="18dp"
+                android:layout_marginEnd="21dp"
                 android:text="@string/sign_out"
                 tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/update_button"
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="131dp"
+                android:text="@string/update" />
         </RelativeLayout>
 
     </LinearLayout>

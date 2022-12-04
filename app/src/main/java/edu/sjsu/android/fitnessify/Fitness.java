@@ -40,7 +40,7 @@ public class Fitness extends Fragment {
     }
 
     private void navigate_to_spotify() {
-        Uri x = Uri.parse("https://open.spotify.com/playlist/4d9FIRJKV1nJDUu6ee4dC6");
+        Uri x = Uri.parse(getString(R.string.spotify_url));
         startActivity(new Intent(Intent.ACTION_VIEW,x));
     }
 }

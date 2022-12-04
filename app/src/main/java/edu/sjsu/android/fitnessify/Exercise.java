@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class Exercise extends AppCompatActivity {
-    CardView cd1,cd2,cd3,cd4,cd5,cd6,cd7,cd8;
+    CardView card1, card2, card3, card4, card5, card6, card7, card8;
 
     private void navigate_to_uri(String s) {
         Uri uri = Uri.parse(s);
@@ -19,53 +19,55 @@ public class Exercise extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
-        cd1 = findViewById(R.id.push_ups_card);
-        cd2 = findViewById(R.id.pull_ups_card);
-        cd3 = findViewById(R.id.squats_card);
-        cd4 = findViewById(R.id.t_plank_card);
-        cd5 = findViewById(R.id.dead_bug_card);
-        cd6 = findViewById(R.id.skipping_card);
-        cd7 = findViewById(R.id.heavy_squat);
-        cd8 = findViewById(R.id.split_jump_card);
+        card1 = findViewById(R.id.push_ups_card);
+        card2 = findViewById(R.id.pull_ups_card);
+        card3 = findViewById(R.id.squats_card);
+        card4 = findViewById(R.id.t_plank_card);
+        card5 = findViewById(R.id.dead_bug_card);
+        card6 = findViewById(R.id.skipping_card);
+        card7 = findViewById(R.id.heavy_squat);
+        card8 = findViewById(R.id.split_jump_card);
 
-        cd1.setOnClickListener(res -> {
+
+        card1.setOnClickListener(res -> {
             Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
-            navigate_to_uri("https://www.youtube.com/watch?v=IODxDxX7oi4");
+            navigate_to_uri(getString(R.string.pushup_url));
         });
 
-        cd2.setOnClickListener(res -> {
+        card2.setOnClickListener(res -> {
             Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
-            navigate_to_uri("https://www.youtube.com/watch?v=eGo4IYlbE5g");
+            navigate_to_uri(getString(R.string.pullups_url));
         });
 
-        cd3.setOnClickListener(res -> {
+        card3.setOnClickListener(res -> {
             Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
-            navigate_to_uri("https://www.youtube.com/watch?v=YaXPRqUwItQ");
+            navigate_to_uri(getString(R.string.squats_url));
         });
 
-        cd4.setOnClickListener(res -> {
+        card4.setOnClickListener(res -> {
             Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
-            navigate_to_uri("https://www.youtube.com/watch?v=rTY5mqJ1HNo");
+            navigate_to_uri(getString(R.string.t_plank_url));
         });
 
-        cd5.setOnClickListener(res -> {
+        card5.setOnClickListener(res -> {
             Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
-            navigate_to_uri("https://www.youtube.com/watch?v=4XLEnwUr1d8");
+            navigate_to_uri(getString(R.string.dead_bug_url));
         });
 
-        cd6.setOnClickListener(res -> {
+        card6.setOnClickListener(res -> {
             Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
-            navigate_to_uri("https://www.youtube.com/watch?v=u3zgHI8QnqE");
+            navigate_to_uri(getString(R.string.skipping_url));
         });
 
-        cd7.setOnClickListener(res -> {
+        card7.setOnClickListener(res -> {
             Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
-            navigate_to_uri("https://www.youtube.com/watch?v=Uv_DKDl7EjA");
+            navigate_to_uri(getString(R.string.heavysquat_url));
         });
 
-        cd8.setOnClickListener(res -> {
+        card8.setOnClickListener(res -> {
             Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
-            navigate_to_uri("https://www.youtube.com/watch?v=qsF1gYTWTrQ");
+            navigate_to_uri(getString(R.string.split_jump_url));
         });
+
     }
 }

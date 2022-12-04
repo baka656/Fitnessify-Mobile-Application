@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
             requestPermissions(new String[]{Manifest.permission.ACTIVITY_RECOGNITION}, ACTIVITY);
         }
         changeFragment(new Home());
-        SharedPreferences preferences_shared = getSharedPreferences("consumer", MODE_PRIVATE);
-        String s1 = preferences_shared.getString("email", "");
+        SharedPreferences preferences_shared = getSharedPreferences(getString(R.string.consumer), MODE_PRIVATE);
+        String s1 = preferences_shared.getString(getString(R.string.email_id), "");
         SmoothBottomBar bar = findViewById(R.id.navigation_bar);
         bar.setOnItemSelectedListener((OnItemSelectedListener) res -> {
             switch (res){

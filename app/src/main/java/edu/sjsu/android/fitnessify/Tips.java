@@ -14,6 +14,6 @@ public class Tips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tips);
         home_workout = findViewById(R.id.tips_web_view);
-        home_workout.loadUrl("https://www.nytimes.com/guides/well/strength-training-plyometrics");
+        home_workout.loadUrl(getString(R.string.tips_url));
     }
 }

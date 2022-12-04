@@ -26,15 +26,15 @@
 
 
     <RelativeLayout
+        android:id="@+id/male"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_toStartOf="@id/line_vertical_center"
-        android:background="@drawable/black_card_back_ground"
         android:layout_above="@id/layout_height"
-        android:layout_marginBottom="35dp"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:id="@+id/male">
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="35dp"
+        android:layout_toStartOf="@id/line_vertical_center"
+        android:background="@drawable/black_card_back_ground">
 
         <ImageView
             android:layout_width="170dp"
@@ -48,16 +48,16 @@
         </ImageView>
 
         <TextView
+            android:id="@+id/male_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:text="@string/male"
-            android:id="@+id/male_text"
-            android:textStyle="bold"
-            android:textAlignment="center"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:text="@string/male"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold">
 
         </TextView>
 
@@ -87,16 +87,16 @@
         </ImageView>
 
         <TextView
+            android:id="@+id/female_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:text="@string/female_text"
-            android:id="@+id/female_text"
-            android:textStyle="bold"
-            android:textAlignment="center"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:text="@string/female_text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold">
 
         </TextView>
 
@@ -137,7 +137,7 @@
             android:layout_alignParentBottom="true"
             android:textColor="@color/white"
             android:layout_centerInParent="true"
-            android:id="@+id/current_height"
+            android:id="@+id/current_ht"
             android:textStyle="bold">
 
         </TextView>
@@ -149,7 +149,7 @@
             android:text="@string/unit"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_toEndOf="@id/current_height"
+            android:layout_toEndOf="@id/current_ht"
             android:layout_marginStart="20dp"
             android:layout_centerInParent="true"
             android:textColor="@color/white" />
@@ -164,14 +164,14 @@
             android:progressTint="#FF4C4C"
             android:thumbTint="@color/white"
             android:layout_marginRight="10dp"
-            android:id="@+id/height_seek_bar">
+            android:id="@+id/ht_seek_bar">
 
         </SeekBar>
 
     </RelativeLayout>
 
     <android.widget.Button
-        android:id="@+id/bmi_calculate"
+        android:id="@+id/bmi_calc"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
@@ -217,7 +217,7 @@
 
 
         <TextView
-            android:id="@+id/weight_current"
+            android:id="@+id/weight_curr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -242,7 +242,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/minus_plus"
-                android:id="@+id/decrease_weight"
+                android:id="@+id/decr_weight"
                 android:contentDescription="@string/image">
 
             </ImageView>
@@ -262,7 +262,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:id="@+id/increase_weight"
+                android:id="@+id/increase_wt"
 
                 android:src="@drawable/addition"
                 android:contentDescription="@string/image">
@@ -303,7 +303,7 @@
         </TextView>
 
         <TextView
-            android:id="@+id/current_age"
+            android:id="@+id/curr_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -330,7 +330,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/minus_plus"
-                android:id="@+id/decrease_age"
+                android:id="@+id/decr_age"
 
                 android:contentDescription="@string/image">
 
@@ -351,7 +351,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:id="@+id/increase_age"
+                android:id="@+id/incr_age"
                 android:src="@drawable/addition"
                 android:contentDescription="@string/image">
 

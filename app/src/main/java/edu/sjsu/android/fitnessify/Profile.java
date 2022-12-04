@@ -25,9 +25,9 @@ public class Profile extends Fragment {
     TextInputLayout name,email,contact;
     FirebaseFirestore fire_store;
     FirebaseAuth fAuth;
-    String consume_id;
+    String consumer_id;
     ImageView profile_img;
-    Button update_button, sign_out_button;
+    Button update_bn, sign_out_bn;
     EditText unit_kg, unit_cm;
 
     public Profile() {
@@ -40,8 +40,8 @@ public class Profile extends Fragment {
 
     public void set_profile_data()
     {
-        consume_id = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
-        DocumentReference reference_document = fire_store.collection("user").document(consume_id);
+        consumer_id = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
+        DocumentReference reference_document = fire_store.collection("user").document(consumer_id);
         reference_document.addSnapshotListener((result, error) -> {
             assert result != null;
             unit_kg.setText(result.getString("weight"));
@@ -56,39 +56,39 @@ public class Profile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View fragment_view = inflater.inflate(R.layout.fragment_profile, container, false);
-        sign_out_button = fragment_view.findViewById(R.id.sign_out_button);
+        sign_out_bn = fragment_view.findViewById(R.id.sign_out_button);
         unit_kg = fragment_view.findViewById(R.id.weight_label);
         unit_cm = fragment_view.findViewById(R.id.height_label);
         name = fragment_view.findViewById(R.id.full_name_profile);
         email = fragment_view.findViewById(R.id.profile_email);
         contact = fragment_view.findViewById(R.id.contact_profile);
-        update_button = fragment_view.findViewById(R.id.update_button);
+        update_bn = fragment_view.findViewById(R.id.update_button);
         profile_img = fragment_view.findViewById(R.id.user_image);
 
         fire_store = FirebaseFirestore.getInstance();
         fAuth = FirebaseAuth.getInstance();
 
         set_profile_data();
-        update_button.setOnClickListener(res -> {
+        update_bn.setOnClickListener(res -> {
             String profile_name = Objects.requireNonNull(name.getEditText()).getText().toString();
             String profile_email = Objects.requireNonNull(email.getEditText()).getText().toString();
             String profile_contact = Objects.requireNonNull(contact.getEditText()).getText().toString();
             String profile_weight = unit_kg.getText().toString();
             String profile_height = unit_cm.getText().toString();
-            consume_id = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
-            DocumentReference reference_document = fire_store.collection("user").document(consume_id);
+            consumer_id = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
+            DocumentReference reference_document = fire_store.collection("user").document(consumer_id);
             Map<String,Object> consumer = new HashMap<>();
-            consumer.put("weight",profile_weight);
-            consumer.put("height",profile_height);
-            consumer.put("email",profile_email);
-            consumer.put("name",profile_name);
-            consumer.put("contact",profile_contact);
+            consumer.put(getString(R.string.l_weight),profile_weight);
+            consumer.put(getString(R.string.l_height),profile_height);
+            consumer.put(getString(R.string.email_id),profile_email);
+            consumer.put(getString(R.string.your_name),profile_name);
+            consumer.put(getString(R.string.l_contact),profile_contact);
             reference_document.set(consumer).addOnSuccessListener(result -> Toast.makeText(getActivity(), R.string.profile_updated, Toast.LENGTH_SHORT).show());
         });
-        sign_out_button.setOnClickListener(res -> {
+        sign_out_bn.setOnClickListener(res -> {
             SharedPreferences shared_Preferences = requireActivity().getSharedPreferences("consumer", MODE_PRIVATE);
             SharedPreferences.Editor edit = shared_Preferences.edit();
-            edit.putString("email", "");
+            edit.putString(getString(R.string.email_id), "");
             edit.apply();
             Toast.makeText(getActivity(), R.string.signed_out, Toast.LENGTH_SHORT).show();
             Intent i = new Intent(getActivity(),MainActivity.class);

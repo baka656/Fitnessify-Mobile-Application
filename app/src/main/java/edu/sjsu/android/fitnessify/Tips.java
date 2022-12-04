@@ -13,7 +13,9 @@ public class Tips extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tips);
+        // For the tips, when user click on tips button, it will take them to nytimes website.
         home_workout = findViewById(R.id.tips_web_view);
+        // load the url
         home_workout.loadUrl(getString(R.string.tips_url));
     }
 }

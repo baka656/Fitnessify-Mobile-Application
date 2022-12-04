@@ -18,6 +18,7 @@ import java.util.Objects;
 
 public class Register extends AppCompatActivity {
 
+    // declare variable for register page
     String pattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     TextView tv;
     EditText email, pwd, name, mobile;
@@ -30,6 +31,7 @@ public class Register extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // adding the field for user input
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         mAuth=FirebaseAuth.getInstance();
@@ -41,6 +43,7 @@ public class Register extends AppCompatActivity {
         pwd = findViewById(R.id.field_password);
         dialog = new ProgressDialog(this);
         tv = findViewById(R.id.existing_user);
+        // checking for validate auth
         reg.setOnClickListener(res -> ValidateAuth());
         tv.setOnClickListener(res -> startActivity(new Intent(Register.this, MainActivity.class)));
     }
@@ -51,6 +54,7 @@ public class Register extends AppCompatActivity {
         startActivity(i);
     }
 
+    // validate method for email, password, name, and mobile number length
     private void ValidateAuth() {
         String email = this.email.getText().toString();
         String password = pwd.getText().toString();

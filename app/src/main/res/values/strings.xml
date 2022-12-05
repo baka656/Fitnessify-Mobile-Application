@@ -105,14 +105,14 @@
     <string name="wt">weight</string>
     <string name="ht">height</string>
     <string name="diet_page">https://www.muscleandstrength.com/recipes</string>
-    <string name="pushup_url">https://www.youtube.com/watch?v=IODxDxX7oi4</string>
-    <string name="pullups_url">https://www.youtube.com/watch?v=eGo4IYlbE5g</string>
-    <string name="squats_url">https://www.youtube.com/watch?v=YaXPRqUwItQ</string>
-    <string name="t_plank_url">https://www.youtube.com/watch?v=rTY5mqJ1HNo</string>
-    <string name="dead_bug_url">https://www.youtube.com/watch?v=4XLEnwUr1d8</string>
-    <string name="skipping_url">https://www.youtube.com/watch?v=u3zgHI8QnqE</string>
-    <string name="heavysquat_url">https://www.youtube.com/watch?v=Uv_DKDl7EjA</string>
-    <string name="split_jump_url">https://www.youtube.com/watch?v=qsF1gYTWTrQ</string>
+    <string name="pushup_url">https://www.youtube.com/watch?v=rruHM_sB2Hc</string>
+    <string name="pullups_url">https://www.youtube.com/watch?v=iBtL9nX2qOs</string>
+    <string name="squats_url">https://www.youtube.com/watch?v=U3HlEF_E9fo</string>
+    <string name="t_plank_url">https://www.youtube.com/watch?v=BQu26ABuVS0</string>
+    <string name="dead_bug_url">https://www.youtube.com/watch?v=8my1MTa0CWw</string>
+    <string name="skipping_url">https://www.youtube.com/watch?v=FJmRQ5iTXKE</string>
+    <string name="heavysquat_url">https://www.youtube.com/watch?v=sdeQjm7avi8</string>
+    <string name="split_jump_url">https://www.youtube.com/watch?v=nN-fkSOL1ds</string>
     <string name="spotify_url">https://open.spotify.com/playlist/4d9FIRJKV1nJDUu6ee4dC6</string>
     <string name="enter_valid_email">Enter Valid Email</string>
     <string name="enter_valid_pwd">Enter Valid Password</string>

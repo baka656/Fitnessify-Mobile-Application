@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LogoSplash extends AppCompatActivity {
 
+    // logoSplash class flash the welcome screen for 3 seconds
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

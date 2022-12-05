@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class Diet extends AppCompatActivity {
-
+    // diet page that take user to another page
     WebView webView;
 
     @Override
@@ -14,6 +14,7 @@ public class Diet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diet);
         webView = findViewById(R.id.diet_web_view);
+        // url load
         webView.loadUrl(getString(R.string.diet_page));
     }
 }

@@ -22,6 +22,7 @@ import java.util.Objects;
 
 public class Profile extends Fragment {
 
+    //declare variable
     TextInputLayout name,email,contact;
     FirebaseFirestore fire_store;
     FirebaseAuth fAuth;
@@ -38,13 +39,16 @@ public class Profile extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    // profile data method
     public void set_profile_data()
     {
         consumer_id = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
         DocumentReference reference_document = fire_store.collection("user").document(consumer_id);
         reference_document.addSnapshotListener((result, error) -> {
             assert result != null;
+            // weight in kg
             unit_kg.setText(result.getString("weight"));
+            // height in cm
             unit_cm.setText(result.getString("height"));
             Objects.requireNonNull(email.getEditText()).setText(result.getString("email"));
             Objects.requireNonNull(contact.getEditText()).setText(result.getString("contact"));
@@ -56,6 +60,7 @@ public class Profile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View fragment_view = inflater.inflate(R.layout.fragment_profile, container, false);
+        // fragment view field
         sign_out_bn = fragment_view.findViewById(R.id.sign_out_button);
         unit_kg = fragment_view.findViewById(R.id.weight_label);
         unit_cm = fragment_view.findViewById(R.id.height_label);
@@ -85,6 +90,7 @@ public class Profile extends Fragment {
             consumer.put(getString(R.string.l_contact),profile_contact);
             reference_document.set(consumer).addOnSuccessListener(result -> Toast.makeText(getActivity(), R.string.profile_updated, Toast.LENGTH_SHORT).show());
         });
+        // on click listener
         sign_out_bn.setOnClickListener(res -> {
             SharedPreferences shared_Preferences = requireActivity().getSharedPreferences("consumer", MODE_PRIVATE);
             SharedPreferences.Editor edit = shared_Preferences.edit();

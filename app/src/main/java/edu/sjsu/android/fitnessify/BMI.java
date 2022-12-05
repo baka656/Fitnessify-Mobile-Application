@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 public class BMI extends AppCompatActivity {
-
+    // setup the current default value of weight, age, and height
     int int_weight = 55, int_age = 22, current_progress;
     String sample_weight ="55", sample_age ="22", user_type ="0", int_progress ="170";
     TextView current_height, current_weight, current_age;
@@ -27,6 +27,7 @@ public class BMI extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
+        // fragment view field
         increment_weight =findViewById(R.id.increase_wt);
         current_weight =findViewById(R.id.weight_curr);
         current_height =findViewById(R.id.current_ht);
@@ -39,6 +40,7 @@ public class BMI extends AppCompatActivity {
         calculate_bmi =findViewById(R.id.bmi_calc);
         current_age =findViewById(R.id.curr_age);
 
+        // male and female click listener
         male.setOnClickListener(res -> {
             user_type =getString(R.string.male);
             female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.gendernotfocused));
@@ -52,6 +54,7 @@ public class BMI extends AppCompatActivity {
         });
 
 
+        // set up max height
         bar_height.setMax(300);
         bar_height.setProgress(170);
         bar_height.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -73,6 +76,7 @@ public class BMI extends AppCompatActivity {
             }
         });
 
+        // set the listener
         increment_age.setOnClickListener(res -> {
             int_age = int_age +1;
             sample_age =String.valueOf(int_age);

@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginFragment extends Fragment {
+    // login fragment for user login
     TextView create_acc;
     EditText input_email, input_pwd;
     Button login_bn;
@@ -35,11 +36,11 @@ public class LoginFragment extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View fragment_view = inflater.inflate(R.layout.fragment_login, container, false);
+        // fragment view input
         input_email = fragment_view.findViewById(R.id.field_email);
         input_pwd = fragment_view.findViewById(R.id.field_password);
         login_bn = fragment_view.findViewById(R.id.login_button);
@@ -58,6 +59,7 @@ public class LoginFragment extends Fragment {
         startActivity(task);
     }
 
+    // check the authentication for email and password
     private void check_authentication() {
         String email = input_email.getText().toString();
         String password = input_pwd.getText().toString();

@@ -15,6 +15,7 @@ import me.ibrahimsn.lib.OnItemSelectedListener;
 import me.ibrahimsn.lib.SmoothBottomBar;
 
 public class MainActivity extends AppCompatActivity {
+    // declare variable
     private static final int TIME = 2000, ACTIVITY = 123456;
     private long bp;
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         String s1 = preferences_shared.getString(getString(R.string.email_id), "");
         SmoothBottomBar bar = findViewById(R.id.navigation_bar);
         bar.setOnItemSelectedListener((OnItemSelectedListener) res -> {
+            // switch condition for home, fitness, login fragment and profile
             switch (res){
                 case 0:
                     changeFragment(new Home());
@@ -52,12 +54,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // changeFragment method
     public void changeFragment(Fragment f) {
         FragmentTransaction t = getSupportFragmentManager().beginTransaction();
         t.replace(R.id.frame,f);
         t.commit();
     }
 
+    // onBackPressed method
     @Override
     public void onBackPressed(){
         if(bp + TIME > System.currentTimeMillis()) {

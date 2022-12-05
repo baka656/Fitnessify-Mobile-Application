@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class BMIResult extends AppCompatActivity {
-
+    // BMIResult
     float int_bmi, int_height, int_weight;
     String bmi, height, weight;
     RelativeLayout back_ground;
@@ -43,6 +43,7 @@ public class BMIResult extends AppCompatActivity {
         int_height = int_height /100;
         int_bmi = int_weight /(int_height * int_height);
         bmi = Float.toString(int_bmi);
+        // giving bmi result according to the calculate
         if(int_bmi <16)
         {
             bmi_category.setText(R.string.severely_thin);

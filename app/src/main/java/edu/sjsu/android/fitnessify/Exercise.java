@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class Exercise extends AppCompatActivity {
+    // all 8 cards for exercise
     CardView card1, card2, card3, card4, card5, card6, card7, card8;
 
     private void navigate_to_uri(String s) {
@@ -19,6 +20,7 @@ public class Exercise extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
+        // fragment view field for all exercise
         card1 = findViewById(R.id.push_ups_card);
         card2 = findViewById(R.id.pull_ups_card);
         card3 = findViewById(R.id.squats_card);
@@ -28,7 +30,7 @@ public class Exercise extends AppCompatActivity {
         card7 = findViewById(R.id.heavy_squat);
         card8 = findViewById(R.id.split_jump_card);
 
-
+        // when user click on exercise button then it will take them to youtube video
         card1.setOnClickListener(res -> {
             Toast.makeText(Exercise.this, R.string.opening_youtube, Toast.LENGTH_SHORT).show();
             navigate_to_uri(getString(R.string.pushup_url));

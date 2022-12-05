@@ -16,6 +16,8 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 public class Home extends Fragment implements SensorEventListener {
+    // home page
+    // declare card, text view and enable the sensor manager to count the steps
     boolean isRunning = false;
     CardView cv;
     TextView tv, number_of_steps;
@@ -32,6 +34,7 @@ public class Home extends Fragment implements SensorEventListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // fragment view field
         View fragment_view = inflater.inflate(R.layout.fragment_home, container, false);
         sensor = (SensorManager) requireActivity().getSystemService( Context.SENSOR_SERVICE);
         tv = fragment_view.findViewById(R.id.sliding_text);
@@ -43,6 +46,7 @@ public class Home extends Fragment implements SensorEventListener {
     }
 
 
+    // onResume method
     @Override
     public void onResume() {
         super.onResume ();
@@ -55,11 +59,13 @@ public class Home extends Fragment implements SensorEventListener {
             sensor.registerListener ( this,count,SensorManager.SENSOR_DELAY_UI );
     }
 
+    // onPause method
     @Override
     public void onPause() {
         super.onPause ();
         isRunning = false;
     }
+    // Sensor changed event if running
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (isRunning)

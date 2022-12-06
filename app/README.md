@@ -1,2 +1,0 @@
-# Fitnessify
-# Team 8

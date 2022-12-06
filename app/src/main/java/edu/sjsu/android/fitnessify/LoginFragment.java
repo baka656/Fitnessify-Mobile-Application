@@ -66,7 +66,7 @@ public class LoginFragment extends Fragment {
         if(!email.matches(email_pattern))
             input_email.setError(getString(R.string.enter_valid_email));
         else if(password.isEmpty() || password.length()<6)
-            input_pwd.setError(getString(R.string.enter_valid_pwd));
+            input_pwd.setError(getString(R.string.invalidPassword));
         else {
             progress_dialog.setMessage(getString(R.string.wait_till_login));
             progress_dialog.setTitle(getString(R.string.logged_in_success));

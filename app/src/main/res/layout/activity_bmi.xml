@@ -242,7 +242,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/minus_plus"
-                android:id="@+id/decr_weight"
+                android:id="@+id/decrement_weight"
                 android:contentDescription="@string/image">
 
             </ImageView>
@@ -330,7 +330,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/minus_plus"
-                android:id="@+id/decr_age"
+                android:id="@+id/decrement_age"
 
                 android:contentDescription="@string/image">
 
@@ -351,7 +351,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:id="@+id/incr_age"
+                android:id="@+id/increment_age"
                 android:src="@drawable/addition"
                 android:contentDescription="@string/image">
 

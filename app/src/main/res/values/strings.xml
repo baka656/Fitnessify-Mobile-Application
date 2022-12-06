@@ -30,7 +30,7 @@
     <string name="pranayama">The practice of pranayama involves breathing exercises and patterns.</string>
     <string name="yogasana">This asana is a meditation on determination and perseverance, as well as commitment.</string>
     <string name="utkatasana1"> It is a strengthening and heat-building asana</string>
-    <string name="sliding_text">Calisthenics will be added soon. Don\'t forget to drink water and stay hydrated</string>
+    <string name="sliding_text">Every day is a chance. Don\'t forget to drink water and stay hydrated</string>
     <string name="title_activity_diet">Diet</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
@@ -78,7 +78,7 @@
     <string name="no_sensor">SENSOR NOT FOUND</string>
     <string name="spotify">Redirecting to Spotify!</string>
     <string name="invalidEmail">Enter Valid Email</string>
-    <string name="invalidPassword">Enter Valid 6 sized Password</string>
+    <string name="invalidPassword">Password length should be at least 6</string>
     <string name="invalidName">Name should not be empty</string>
     <string name="invalidMobile">Enter valid mobile number</string>
     <string name="registrationProcessing">Please wait till Registration…</string>
@@ -116,7 +116,7 @@
     <string name="spotify_url">https://open.spotify.com/playlist/4d9FIRJKV1nJDUu6ee4dC6</string>
     <string name="enter_valid_email">Enter Valid Email</string>
     <string name="enter_valid_pwd">Enter Valid Password</string>
-    <string name="wait_till_login">Please wait till Login...</string>
+    <string name="wait_till_login">Please wait till Login…</string>
     <string name="logged_in_success">Logged In</string>
     <string name="consumer">consumer</string>
     <string name="email_id">email</string>
@@ -124,7 +124,7 @@
     <string name="enter_6_pwd">Enter Valid 6 sized Password</string>
     <string name="name_not_empty">Name should not be empty</string>
     <string name="valid_mob_num">Enter valid mobile number</string>
-    <string name="wait_till_reg">Please wait till Registration...</string>
+    <string name="wait_till_reg">Please wait till Registration…</string>
     <string name="your_name">name</string>
     <string name="l_contact">contact</string>
     <string name="tips_url">https://www.nytimes.com/guides/well/strength-training-plyometrics</string>

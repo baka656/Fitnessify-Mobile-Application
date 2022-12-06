@@ -15,8 +15,10 @@
         <entry key="..\:/Users/Checkout/AndroidStudioProjects/Team8Fitnessify/app/src/main/res/layout/fragment_home.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Checkout/AndroidStudioProjects/Team8Fitnessify/app/src/main/res/layout/fragment_login.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Checkout/AndroidStudioProjects/Team8Fitnessify/app/src/main/res/layout/fragment_profile.xml" value="0.358695652173913" />
+        <entry key="app/src/main/res/drawable-v24/black_card_back_ground.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable-v24/cardbackgroung.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/button_back_ground.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/buttonbackground.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_baseline_height_24.xml" value="0.1645" />

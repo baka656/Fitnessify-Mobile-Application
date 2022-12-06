@@ -31,12 +31,12 @@ public class BMI extends AppCompatActivity {
         increment_weight =findViewById(R.id.increase_wt);
         current_weight =findViewById(R.id.weight_curr);
         current_height =findViewById(R.id.current_ht);
-        increment_age =findViewById(R.id.incr_age);
-        decrement_age =findViewById(R.id.decr_age);
+        increment_age =findViewById(R.id.increment_age);
+        decrement_age =findViewById(R.id.decrement_age);
         male =findViewById(R.id.male);
         female =findViewById(R.id.female);
         bar_height =findViewById(R.id.ht_seek_bar);
-        decrement_weight =findViewById(R.id.decr_weight);
+        decrement_weight =findViewById(R.id.decrement_weight);
         calculate_bmi =findViewById(R.id.bmi_calc);
         current_age =findViewById(R.id.curr_age);
 
